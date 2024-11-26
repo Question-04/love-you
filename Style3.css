@@ -5,6 +5,7 @@ body {
   height: 100vh;
   background: #b784db;
 }
+
 .envelope {
   position: relative;
   cursor: pointer;
@@ -16,6 +17,7 @@ body {
   height: 200px;
   background: #6247aa;
 }
+
 .front {
   position: absolute;
   border-right: 130px solid #815ac0;
@@ -27,6 +29,7 @@ body {
   left: 120px;
   z-index: 3;
 }
+
 .front:before {
   content: "";
   position: absolute;
@@ -38,6 +41,7 @@ body {
   top: -100px;
   left: -120px;
 }
+
 .front:after {
   content: "";
   position: absolute;
@@ -49,6 +53,7 @@ body {
   top: -5px;
   left: -120px;
 }
+
 .top {
   position: absolute;
   border-top: 105px solid #9163cb;
@@ -60,9 +65,11 @@ body {
   transform-origin: top;
   transition: 0.4s;
 }
+
 .envelope:hover .top {
   transform: rotateX(160deg);
 }
+
 .letter {
   position: absolute;
   background: white;
@@ -71,17 +78,21 @@ body {
   top: 10px;
   left: 10px;
   transition: 0.2s;
+  z-index: 4; /* Ensures it's above other elements */
 }
+
 .envelope:hover .letter {
   transform: translateY(-100px);
-  z-index: 2;
+  z-index: 5; /* Bring letter to the front */
 }
+
 .text1 {
   position: absolute;
   color: white;
   font-family: sans-serif;
   top: -50%;
 }
+
 .text {
   text-align: center;
   font-size: 11px;
@@ -92,6 +103,18 @@ body {
   position: relative;
   top: -20px;
   left: 20px;
+  z-index: 6; /* Ensures the text and link are on top */
+}
+
+.text a {
+  text-decoration: none;
+  color: blue;
+  position: relative;
+  z-index: 7; /* Ensures the link is clickable */
+}
+
+.text a:hover {
+  color: darkblue;
 }
 
 /*---heart -----*/
@@ -118,6 +141,7 @@ body {
     transform: rotate(-45deg) scale(0.8);
   }
 }
+
 .heart:before {
   content: "";
   position: absolute;
@@ -127,6 +151,7 @@ body {
   top: -40px;
   border-radius: 50px;
 }
+
 .heart:after {
   content: "";
   position: absolute;
